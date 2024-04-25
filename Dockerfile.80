@@ -1,0 +1,24 @@
+FROM php:8.2-apache
+#installing git
+RUN apt-get install -y git
+#installing curl
+RUN apt-get install -y curl
+#######nodejs
+RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
+RUN apt-get install -y nodejs 
+RUN curl -s https://getcomposer.org/installer | php
+RUN mv composer.phar /usr/local/bin/composer
+RUN mkdir /var/www/html/php80
+
+
+RUN usermod -u 1000 www-data
+
+ADD ./etc/apache2/sites-available/php80.conf /etc/apache2/sites-available/php80.conf
+
+ADD ./etc/apache2/apache2.conf /etc/apache2/apache2.conf
+
+RUN a2dissite 000-default
+
+RUN a2ensite php80
+
+RUN service apache2 restart

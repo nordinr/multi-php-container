@@ -1,0 +1,29 @@
+version: '3.3'
+
+services:
+
+# There are 2 containers
+# php56
+# php80 // second container~~~
+
+  php56:
+    container_name: php56
+    build:
+      context: .
+      dockerfile: Dockerfile.56
+    ports:
+      - 80:80
+    volumes:
+      - ./php56:/var/www/html/    
+
+  php80:
+    container_name: php80
+    build:
+      context: .
+      dockerfile: Dockerfile.80
+    ports:
+      - 88:80
+    volumes:
+      - ./php80:/var/www/html/
+volumes:
+  db:
