@@ -14,7 +14,7 @@ services:
     ports:
       - 7008:80
     volumes:
-      - /Users/bokehs/Docker/multi-php-container/php72/public:/var/www/html/php72/public
+      - ./var/www/html/php72/public:/var/www/html/php72/public #change if needed. This will be you working dir.
 
   php80:
     container_name: php80
@@ -24,7 +24,7 @@ services:
     ports:
       - 7009:80
     volumes:
-      - /Users/bokehs/Docker/multi-php-container/php80/public:/var/www/html/php80/public
+      - ./var/www/html/php72/public:/var/www/html/php80/public #change if needed. This will be your working dir.
       
 volumes:
   db:

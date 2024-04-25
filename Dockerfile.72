@@ -11,12 +11,13 @@ RUN apt-get install -y nodejs
 RUN curl -s https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
 # create your own directory within that docker container
-RUN mkdir -p /var/www/html/php72/public 
-ADD ./index.php /var/www/html/php72/public/index.php
+RUN mkdir -p /var/www/html/php72/public
 
 RUN usermod -u 1000 www-data
 
 #creating a virtual host for our project
+# This added file will increase image size. Need to rebuild image if you change it
+# ADD ./var/www/html/php72/public/index.php /var/www/html/php72/public/index.php 
 
 ADD ./etc/apache2/sites-available/php72.conf /etc/apache2/sites-available/php72.conf
 

@@ -10,9 +10,10 @@ RUN apt-get install -y nodejs
 RUN curl -s https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
 RUN mkdir -p /var/www/html/php80/public
-ADD ./index.php /var/www/html/php80/public/index.php
-
 RUN usermod -u 1000 www-data
+
+# This added file will increase image size. Need to rebuild image if you change it
+#ADD ./var/www/html/php80/public/index.php /var/www/html/php80/public/index.php
 
 ADD ./etc/apache2/sites-available/php80.conf /etc/apache2/sites-available/php80.conf
 
