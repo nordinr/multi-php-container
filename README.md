@@ -17,7 +17,7 @@ Make sure you have Docker installed on your system.
 
 Installation:
 1- Clone this repository to your local machine:
-git clone https://github.com/ALEEZAJOGIYAT/PHPVersDock.git
+git clone https://github.com/nordinr/multi-php-container
 
 2-Customize PHP versions and configurations as needed in the docker-compose.yml file.
     Run the following command to start the Docker containers:
