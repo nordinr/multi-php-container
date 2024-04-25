@@ -1,4 +1,5 @@
 FROM php:8.2-apache
+RUN apt-get update
 #installing git
 RUN apt-get install -y git
 #installing curl
@@ -8,7 +9,7 @@ RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
 RUN apt-get install -y nodejs 
 RUN curl -s https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
-RUN mkdir /var/www/html/php80
+RUN mkdir -p /var/www/html/php80/public
 
 
 RUN usermod -u 1000 www-data

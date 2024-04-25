@@ -1,4 +1,5 @@
 FROM php:7.2-apache
+RUN apt-get update
 #installing git
 RUN apt-get install -y git
 #installing curl
@@ -10,7 +11,7 @@ RUN apt-get install -y nodejs
 RUN curl -s https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
 # create your own directory within that docker container
-RUN mkdir /var/www/html/php72 
+RUN mkdir -p /var/www/html/php72/public 
 
 
 RUN usermod -u 1000 www-data

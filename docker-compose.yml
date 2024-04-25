@@ -6,15 +6,15 @@ services:
 # php56
 # php80 // second container~~~
 
-  php56:
-    container_name: php56
+  php72:
+    container_name: php72
     build:
       context: .
-      dockerfile: Dockerfile.56
+      dockerfile: Dockerfile.72
     ports:
-      - 80:80
+      - 7008:80
     volumes:
-      - ./php56:/var/www/html/    
+      - /Users/bokehs/Docker/multi-php-container/php72/public:/var/www/html/public
 
   php80:
     container_name: php80
@@ -22,8 +22,8 @@ services:
       context: .
       dockerfile: Dockerfile.80
     ports:
-      - 88:80
+      - 7009:80
     volumes:
-      - ./php80:/var/www/html/
+      - /Users/bokehs/Docker/multi-php-container/php80/public:/var/www/html/public
 volumes:
   db:
