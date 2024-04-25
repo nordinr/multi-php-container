@@ -25,11 +25,13 @@ git clone https://github.com/nordinr/multi-php-container
     sudo docker-compose up -d 
 3-Setting Up Virtual Hosts
 To create a virtual host for your project:
+```
     Open the hosts file on your local machine:
     Windows: C:\Windows\System32\drivers\etc\hosts
     Mac/Linux: /etc/hosts
         Add an entry for your project:
         127.0.0.1   your-project.local
+```
 Configure the virtual host in the Docker containers
 4-Restart the Docker containers:
     Now, you can access your project in the browser using http://your-project.local 😀😀
