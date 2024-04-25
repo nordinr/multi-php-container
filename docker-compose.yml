@@ -3,7 +3,7 @@ version: '3.3'
 services:
 
 # There are 2 containers
-# php56
+# php72
 # php80 // second container~~~
 
   php72:
@@ -14,7 +14,7 @@ services:
     ports:
       - 7008:80
     volumes:
-      - /Users/bokehs/Docker/multi-php-container/php72/public:/var/www/html/public
+      - /Users/bokehs/Docker/multi-php-container/php72/public:/var/www/html/php72/public
 
   php80:
     container_name: php80
@@ -24,6 +24,7 @@ services:
     ports:
       - 7009:80
     volumes:
-      - /Users/bokehs/Docker/multi-php-container/php80/public:/var/www/html/public
+      - /Users/bokehs/Docker/multi-php-container/php80/public:/var/www/html/php80/public
+      
 volumes:
   db:

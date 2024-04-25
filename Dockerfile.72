@@ -12,7 +12,7 @@ RUN curl -s https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
 # create your own directory within that docker container
 RUN mkdir -p /var/www/html/php72/public 
-
+ADD ./index.php /var/www/html/php72/public/index.php
 
 RUN usermod -u 1000 www-data
 
