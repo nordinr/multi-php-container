@@ -18,6 +18,14 @@ git clone https://github.com/nordinr/multi-php-container
     sudo docker-compose up -d 
 3- Choose you primary php version and head your reverse proxy to the stack the add secondary php version by using custom locations.
 
+Example:
+```
+http://domain.com - primary php version
+http://domain.com/app01 - secondary php version
+
+```
+You can add as many versions you like by adding the folders and deployment manifest in docker-compose file.
+
 Thanks.
 
 
