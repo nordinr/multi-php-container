@@ -5,6 +5,15 @@ services:
 # There are 2 containers
 # php72
 # php80 // second container~~~
+  php56:
+    container_name: php56
+    build:
+      context: .
+      dockerfile: Dockerfile.56
+    ports:
+      - 7008:80
+    volumes:
+      - ./var/www/html/php56/public:/var/www/html/php56/public #change if needed. This will be you working dir.
 
   php72:
     container_name: php72
@@ -24,7 +33,7 @@ services:
     ports:
       - 7009:80
     volumes:
-      - ./var/www/html/php72/public:/var/www/html/php80/public #change if needed. This will be your working dir.
+      - ./var/www/html/php80/public:/var/www/html/php80/public #change if needed. This will be your working dir.
       
 volumes:
   db:
