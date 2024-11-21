@@ -19,7 +19,7 @@ Installation:
 3. Choose you primary php version and head your reverse proxy to the stack the add secondary php version by using custom locations.
 
 Example:
-```
+```console
 http://domain.com - primary php version
 http://domain.com/app01 - secondary php version
 
